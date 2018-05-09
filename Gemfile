@@ -34,7 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # For design and validation
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'bootstrap', '~> 4.0'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 # For user authentication
