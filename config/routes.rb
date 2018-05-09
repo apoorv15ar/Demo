@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  resources :videos
-  root 'dashboard#home'
+
+  root 'videos#index'
+
+  get 'dashboard/home'
 
   devise_for :users
+
+  resources :videos
+
 end
