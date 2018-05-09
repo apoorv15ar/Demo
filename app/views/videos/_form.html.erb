@@ -13,22 +13,22 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :video_name, required: true %>
+    <%= form.text_field :name, id: :video_name, required: true, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description, id: :video_description %>
+    <%= form.text_area :description, id: :video_description, class: 'form-control' %>
   </div>
 
   <% unless video.persisted? %>
     <div class="field">
       <%= form.label :file %>
-      <%= form.file_field :file, id: :video_file, required: true %>
+      <%= form.file_field :file, id: :video_file, required: true, class: 'form-control' %>
     </div>
   <% end %>
-
+  <br><br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'form-control btn btn-primary' %>
   </div>
 <% end %>
