@@ -1,5 +1,6 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
+  after_action :set_views, only: [:show]
 
   def index
     @videos = Video.all
@@ -43,6 +44,11 @@ class VideosController < ApplicationController
   private
     def set_video
       @video = current_user.videos.find(params[:id])
+    end
+
+    def set_views
+      @video.views += 1
+      @video.save
     end
 
     def video_params

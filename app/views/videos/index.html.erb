@@ -9,7 +9,8 @@
         <%= video_tag(video.file, controls: true, autobuffer: true, style: 'width: 100%;') %>
       </a>
       <br>
-      <strong><%= video.name %></strong>
+      <strong><%= video.name %></strong> (<%= video.views %> views)
+      <br>
       <span><%= video.description.truncate(50) %></span>
     </div>
   <% end %>
