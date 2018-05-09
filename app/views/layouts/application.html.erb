@@ -8,9 +8,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="container">
-    <%= render partial: 'common/flash_msg' %>
+  <header>
+    <%= render partial: 'common/header' %>
+  </header>
 
-    <%= yield %>
+  <body>
+    <%= render partial: 'common/flash_msg' %>
+    <div class="fluidic-container">
+      <%= yield %>
+    </div>
   </body>
 </html>

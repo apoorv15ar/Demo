@@ -36,6 +36,10 @@ class VideosController < ApplicationController
     redirect_to videos_url, notice: 'Video was successfully destroyed.'
   end
 
+  def my_videos
+    @videos = current_user.videos
+  end
+
   private
     def set_video
       @video = current_user.videos.find(params[:id])
