@@ -49,7 +49,7 @@ class VideosController < ApplicationController
     end
 
     def set_video
-      @video = current_user.videos.find(params[:id])
+      @video = Video.find(params[:id])
     end
 
     def set_views
