@@ -3,7 +3,7 @@
   <div class="col-md-8">
     <h2 class="text-center"><%= @video.name %></h2>
     <span class="pull-right"><%= @video.views %> views</span>
-    <%= video_tag(@video.file, controls: true, autobuffer: true) %>
+    <%= video_tag(@video.file, controls: true, autobuffer: true) rescue 'Temproory video is not available' %>
     <p><%= @video.description %></p>
   </div>
   <br>
