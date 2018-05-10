@@ -13,8 +13,10 @@
     <li class="nav-item">
       <a class="nav-link" href="/">Home</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="<%= my_videos_path %>">My Video's</a>
-    </li>
+    <% if user_signed_in? %>
+      <li class="nav-item">
+        <a class="nav-link" href="<%= my_videos_path %>">My Video's</a>
+      </li>
+    <% end %>
   </ul>
 </nav>
