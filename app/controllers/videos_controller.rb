@@ -1,4 +1,5 @@
 class VideosController < ApplicationController
+  before_action :check_user, only: [:edit, :new, :create, :destroy]
   before_action :set_video, only: [:show, :edit, :update, :destroy]
   after_action :set_views, only: [:show]
 
@@ -42,6 +43,11 @@ class VideosController < ApplicationController
   end
 
   private
+    def check_user
+      return true if user_signed_in?
+      redirect_to root_path, notice: 'Signup or login to access the page!'
+    end
+
     def set_video
       @video = current_user.videos.find(params[:id])
     end
